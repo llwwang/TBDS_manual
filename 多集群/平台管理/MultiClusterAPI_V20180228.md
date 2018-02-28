@@ -113,6 +113,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
 <pre>
 curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/project/findProjectById?id=4
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -165,6 +166,7 @@ curl -H "Content-Type:application/json" -X POST --data '[{
  	"roleIds": "4,3"
  }]' --header 'Authorization:XXXX'  http://10.0.0.3/api/project/addProjectLeagerRole
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -173,6 +175,7 @@ curl -H "Content-Type:application/json" -X POST --data '[{
     "resultData": null
 }
 </pre>
+
 ## 2.4修改项目成员的角色 ##
 **参数说明**
 
@@ -186,6 +189,7 @@ curl -H "Content-Type:application/json" -X POST --data '[{
     "roleIds": "3,2,4"
 }]'  --header 'Authorization:XXXX' http://10.0.0.3/api/project/modifyProjectLeagerRole
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -194,6 +198,7 @@ curl -H "Content-Type:application/json" -X POST --data '[{
     "resultData": null
 }
 </pre>
+
 ## 2.5删除项目的用户角色 ##
 **参数说明**
 
@@ -203,6 +208,7 @@ curl -H "Content-Type:application/json" -X POST --data '[{
 <pre>
 curl -X GET --header 'Authorization:XXXX' 'http://10.0.0.3/api/project/removeLeaguerFromProject?projectId=4&userIds=2'
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -211,6 +217,7 @@ curl -X GET --header 'Authorization:XXXX' 'http://10.0.0.3/api/project/removeLea
     "resultData": null
 }
 </pre>
+
 ## 2.6删除项目 ##
 **参数说明**
 
@@ -219,6 +226,7 @@ curl -X GET --header 'Authorization:XXXX' 'http://10.0.0.3/api/project/removeLea
 <pre>
 curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/project/deleteProjects?ids=13
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -227,6 +235,7 @@ curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/project/deleteProj
     "resultData": null
 }
 </pre>
+
 ## 2.7设置项目环境变量 ##
 **参数说明**
 
@@ -248,6 +257,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "operatorId": ""
 }' --header 'Authorization:XXXX' http://10.0.0.3/api/project/updateProjectEnv
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -256,6 +266,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "resultData": true
 }
 </pre>
+
 # 3.资源划分 #
 ## 3.1划分HDFSquota资源 ##
 **参数说明**
@@ -286,6 +297,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "resultData": "885c3dbb-ce59-4f4c-b29a-e614c06d78bc"
 }
 </pre>
+
 ## 3.2划分YarnQUEUE资源 ##
 **参数说明**
     
@@ -313,6 +325,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "enableAllocateResource": false
 }' --header 'Authorization:XXXX'  http://10.0.0.3/api/resource/queues/config
 </pre>
+
 **返回结果:resultData为划分的YarnQueue的资源id**
 <pre>
 {
@@ -349,6 +362,7 @@ post /api/resource/queues/config # 更新yarn queue
     "id": "42b61eb2-c140-4223-859a-31a80d775067"  # queue_id
 }
 </pre>
+
 ## 3.3删除HDFSquota资源 ##
 **参数说明**
 
@@ -356,6 +370,7 @@ post /api/resource/queues/config # 更新yarn queue
 <pre>
 curl -X DELETE --header 'Authorization:XXXX' http://10.0.0.3/api/resource/quotas/config/{quota_id}
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -364,6 +379,7 @@ curl -X DELETE --header 'Authorization:XXXX' http://10.0.0.3/api/resource/quotas
     "resultData": true
 }
 </pre>
+
 ## 3.4删除YarnQUEUE资源 ##
 **参数说明**
 
@@ -371,6 +387,7 @@ curl -X DELETE --header 'Authorization:XXXX' http://10.0.0.3/api/resource/quotas
 <pre>
 curl -X DELETE --header 'Authorization:XXXX' http://10.0.0.3/api/resource/queues/config/{queue_id}
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -379,6 +396,7 @@ curl -X DELETE --header 'Authorization:XXXX' http://10.0.0.3/api/resource/queues
     "resultData": true
 }
 </pre>
+
 ## 3.5根据项目ID获取quotas信息 ##
 **参数说明**
 
@@ -386,6 +404,7 @@ curl -X DELETE --header 'Authorization:XXXX' http://10.0.0.3/api/resource/queues
 <pre>
 curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/resource/quotas/project-config?projectIds={projectId}
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -408,6 +427,7 @@ curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/resource/quotas/pr
     }]
 }
 </pre>
+
 ## 3.6根据项目ID获取queue信息 ##
 **参数说明**
 
@@ -415,6 +435,7 @@ curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/resource/quotas/pr
 <pre>
 curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/resource/queues/project-config?projectIds={projectId}
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -440,6 +461,7 @@ curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/resource/queues/pr
     }]
 }
 </pre>
+
 ## 3.7设置项目申请资源的状态 ##
 **参数说明**
 
@@ -454,6 +476,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "status": "0"
 }'  --header 'Authorization:XXXX'  http://10.0.0.3/api/project/updateProjectApplyStatus
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -462,6 +485,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "resultData": true
 }
 </pre>
+
 # 4.用户体系 #
 ## 4.1获取全部有效用户 ##
 **参数说明**
@@ -471,6 +495,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
 <pre>
 curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/users/findUsers?pageSize=1000&pageIndex=0
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -520,6 +545,7 @@ curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/users/findUsers?pa
     }
 }
 </pre>
+
 ## 4.2创建用户 ##
 **参数说明**
 
@@ -541,6 +567,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "remark": ""
 }' --header 'Authorization:XXXX' http://10.0.0.3/api/users/addNewUser
 </pre>
+
 **返回结果:新用户的用户ID**
 <pre>
 {
@@ -549,6 +576,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "resultData": "6"
 }
 </pre>
+
 ## 4.3根据用户ID查询用户信息 ##
 **参数说明**
 
@@ -556,6 +584,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
 <pre>
 curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/users/findUserById?userId=6
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -578,6 +607,7 @@ curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/users/findUserById
     }
 }
 </pre>
+
 ## 4.4删除用户 ##
 **参数说明**
 
@@ -585,6 +615,7 @@ curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/users/findUserById
 <pre>
 curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/users/deleteUsers?userIds=5
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -593,6 +624,7 @@ curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/users/deleteUsers?
     "resultData": null
 }
 </pre>
+
 # 5.数据管理 #
 ## 5.1创建库表管理的数据库 ##
 **参数说明**
@@ -618,6 +650,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "enableAllocateResource": false
 }' --header 'Authorization:XXXX' http://10.0.0.3/api/tbdsmeta/database/create
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -626,6 +659,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "message": null
 }
 </pre>
+
 ## 5.2删除手动创建的数据库 ##
 **参数说明**
 
@@ -637,6 +671,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "enableAllocateResource": false
 }' --header 'Authorization:XXXX'  http://10.0.0.3/api/tbdsmeta/database/delete
 </pre>
+
 **返回结果**
 <pre>
 {
@@ -652,6 +687,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
 <pre>
 curl -X GET  --header "Authorization:XXXX" http://10.0.0.3/api/multiserver/query
 </pre>
+
 **返回结果**
 <pre>
 {
