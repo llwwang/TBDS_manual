@@ -645,6 +645,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
     "message": null
 }
 </pre>
+
 # 6.多集群相关 #
 ## 6.1获取公共服务配置信息 ##
 **参数说明**
